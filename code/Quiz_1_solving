@@ -1,0 +1,26 @@
+oz <- complete.cases(my_df["Ozone"])
+tp <- complete.cases(my_df["Temp"])
+new <- oz & tp
+new_df <- my_df[new,][,]
+oz_31 <- new_df["Ozone"]>31
+tp_90 <- new_df["Temp"]>90
+req <- oz_31 & tp_90
+new_df[req,][,]
+new_df[req,][,"Solar.R"]
+mean(new_df[req,][,"Solar.R"])
+
+
+mean(my_df[my_df$Month ==6,][,"Temp"])
+
+
+
+new_df <- my_df[!is.na(my_df$Ozone) & !is.na(my_df$Temp),][,]
+mean(new_df[new_df$Ozone>31 & new_df$Temp>90 ,][,"Solar.R"])
+
+
+
+
+
+
+
+
